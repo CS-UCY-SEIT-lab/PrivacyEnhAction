@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PrivacyEnhACTion</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+    <!-- Styles -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/calendar2/pignose.calendar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chartist/chartist.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/weather-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/menubar/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/helper.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <div class="logo"><a href="{{ url_for('home') }}">
+
+                     <span>   <img src="{{url_for('static',filename='images/privacyenhaction_logo.png')}}" height="120" width="160" alt="" /> </span></a></div>
+                            
+                    <li class="label"></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> <b>Menu</b> </a>
+                        <ul>
+                            
+                           <li><a href="{{ url_for('inf_page') }}"><img src="{{url_for('static',filename='images/searcher.png')}}" height="20" width="20" >&nbsp; &nbsp; Inference Detection </a></li>
+                            <li><a href="{{ url_for('devices_management') }}"><img src="{{url_for('static',filename='images/device.png')}}" height="20" width="20" >&nbsp; &nbsp;My Devices </a></li>
+                            <li><a href="{{ url_for('settings') }}"><img src="{{url_for('static',filename='images/settings.png')}}" height="20" width="20" >&nbsp; &nbsp;Settings </a></li>
+                            <li><a href="{{ url_for('about') }}"><img src="{{url_for('static',filename='images/about.png')}}" height="20" width="20" >&nbsp; &nbsp;About PrivacyEnhaction </a></li>
+
+                       </ul>
+                    </li>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+
+
+
+
+                   
+    <!-- /# sidebar -->
+
+   <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Menu</a></li>
+                                    <li class="breadcrumb-item active">Inference Detection</li>
+                                    
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                 </div>
+                <!-- /# row -->
+                <section id="main-content">
+                  <div class="card text-center">
+                    <div class="col-lg-12">
+                      <div class="card-header"><h3><b>Garmin Data Inferences</b></h3>
+                        
+                      </div>
+                    </div>
+
+
+
+   
+
+
+
+
+   <div class="row">
+
+    <div class="col-lg-3 col-sm-3">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-text"><p style="font-size:14px;"><b>Your Data Information</b></p> 
+                                    <p style="font-size:12px;"> <img src="{{url_for('static',filename='images/files.png')}}" height="20" width="20" alt="" />          <b>Files Processed: 2 </b>  </p>
+                                    <p style="font-size:12px;">  <img src="{{url_for('static',filename='images/records.png')}}" height="20" width="20" alt="" /> <b>Total Records: {{total_count}}  </b></p>
+                                    <p style="font-size:12px;">  <img src="{{url_for('static',filename='images/time.png')}}" height="20" width="20" alt="" /><b>Processing Time: {{total_process_time}} seconds</b></p>                                        
+                                     </div>
+
+                             
+                            </div>
+                        </div>
+    </div>
+                        
+    
+
+
+
+
+
+<div class="col-lg-3 col-sm-3">
+    <div class="card">
+        <div class="stat-widget-two card-body">
+            <a href="{{ url_for('garmin_location_inf', pass_loc = infered_location, pass_act = infered_activity,
+            pass_fullnamegarminact = infered_fullnamegarminact, pass_process_timeg = infered_process_timeg,
+            pass_totalg = infered_totalg, pass_days_in_data_g = infered_days_in_data_g,
+            pass_rowcount1g = infered_rowcount1g, pass_fullnamegarminloc = infered_fullnamegarminloc ) }}" ><button class="rounded-button" type="button" >Activity & Location Inferences</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-sm-3">
+    <div class="card">
+        <div class="stat-widget-two card-body">
+            <a href="{{ url_for('garmin_fitness_inf', pass_fit=infered_fitness, pass_vo2=infered_vo2, pass_days=infered_days,pass_dur=infered_dur, pass_common_day=infered_common_day,pass_common_hour=infered_common_hour, 
+            pass_fullnamevO2MaxValue = infered_fullnamevO2MaxValue,   pass_days_in_data_gf = infered_days_in_data_gf, 
+            pass_elapsed_time2_g = infered_elapsed_time2_g, pass_rowcount2g = infered_rowcount2g, 
+            pass_fullnamegarminactday = infered_fullnamegarminactday) }}" ><button class="rounded-button" type="button" >Fitness Inferences</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-sm-3">
+    <div class="card">
+        <div class="stat-widget-two card-body">
+            <a href="{{ url_for('garmin_sleep_inf', pass_infered_avgSleepHours_wdays = infered_avgSleepHours_wdays, 
+      pass_infered_avgSleepHours_wends = infered_avgSleepHours_wends, pass_infered_avgsleepstarthour_wdays = infered_avgsleepstarthour_wdays, 
+      pass_infered_avgsleepstarthour_wends = infered_avgsleepstarthour_wends,
+      pass_infered_avgwakeuptime_wdays = infered_avgwakeuptime_wdays, pass_infered_avgwakeuptime_wends = infered_avgwakeuptime_wends, 
+      pass_infered_percentage_of_deep_sleep = infered_percentage_of_deep_sleep, pass_infered_percentage_of_light_sleep = infered_percentage_of_light_sleep,
+      pass_infered_percentage_of_awake_sleep = infered_percentage_of_awake_sleep,
+      pass_fullnamegarminhoursofsleep = infered_fullnamegarminhoursofsleep, pass_days_in_data_gs = infered_days_in_data_gs, pass_elapsed_time3_g = infered_elapsed_time3_g, pass_rowcount3g = infered_rowcount3g,
+      pass_fullnamegarminweekdaysleepfacts = infered_fullnamegarminweekdaysleepfacts, 
+      pass_fullnamegarminweekendsleepfacts = infered_fullnamegarminweekendsleepfacts) }}" ><button class="rounded-button" type="button" >Sleep Inferences</button></a>
+        </div>
+    </div>
+</div>
+
+
+
+                
+                   
+
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">PrivacyEnhACT</a> 2021</p>
+            </div>
+        </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jquery vendor -->
+    <script src="{{url_for('static',filename='js/lib/jquery.min.js')}}"></script>
+    
+    <script src="{{url_for('static',filename='js/lib/jquery.nanoscroller.min.js')}}"></script>
+    <!-- nano scroller -->
+    <script src="{{url_for('static',filename='js/lib/menubar/sidebar.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/preloader/pace.min.js')}}"></script>
+    <!-- sidebar -->
+
+    <script src="{{url_for('static',filename='js/lib/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+    <!-- bootstrap -->
+
+    <script src="{{url_for('static',filename='js/lib/calendar-2/moment.latest.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/calendar-2/pignose.init.js')}}"></script>
+
+
+    <script src="{{url_for('static',filename='js/lib/weather/jquery.simpleWeather.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/weather/weather-init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/circle-progress/circle-progress-init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/chartist/chartist.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/sparklinechart/jquery.sparkline.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/sparklinechart/sparkline.init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
+    <!-- scripit init-->
+    <script src="{{url_for('static',filename='js/dashboard2.js')}}"></script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PrivacyEnhACTion</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+    <!-- Styles -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/calendar2/pignose.calendar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chartist/chartist.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/weather-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/menubar/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/helper.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <div class="logo"><a href="{{ url_for('home') }}">
+
+                     <span>   <img src="{{url_for('static',filename='images/privacyenhaction_logo.png')}}" height="120" width="160" alt="" /> </span></a></div>
+                            
+                    <li class="label"></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Menu </a>
+                        <ul>
+                            
+                            <li><a href="{{ url_for('inf_page') }}"><img src="{{url_for('static',filename='images/searcher.png')}}" height="20" width="20" >&nbsp; &nbsp; Inference Detection </a></li>
+                            <li><a href="{{ url_for('devices_management') }}"><img src="{{url_for('static',filename='images/device.png')}}" height="20" width="20" >&nbsp; &nbsp;My Devices </a></li>
+                            <li><a href="{{ url_for('settings') }}"><img src="{{url_for('static',filename='images/settings.png')}}" height="20" width="20" >&nbsp; &nbsp;Settings </a></li>
+                            <li><a href="{{ url_for('about') }}"><img src="{{url_for('static',filename='images/about.png')}}" height="20" width="20" >&nbsp; &nbsp;About PrivacyEnhaction </a></li>
+
+
+                       </ul>
+                    </li>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+   
+
+   <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Menu</a></li>
+                                    <li class="breadcrumb-item active">Inference Detection</li>
+                                    
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                 </div>
+                
+
+<button onclick="history.back()">Back</button>
+    <section id="main-content">
+                  <div class="card text-center">
+                    <div class="col-lg-12">
+                      <div class="card-header"><h3><b>MiC4 Personal Inferences</b></h3>
+                       
+                      
+                      </div>
+                   <div class="card-header">
+    <p><b>Your daily activity data can reveal a lot of information about your behavior in everyday life. Here, you can find out more about the inferences that can be extracted about you related to your religion, your activity level index and pregnancy possibility and what the privacy risks are by clicking on the relevant images.</b>  </p>
+    <p><b>Religion information can be infered by analyzing your activity data , while pregnancy could be indicated for women by analysing their resting heart rate values, as in pregnant women resting heart rates are 30% higher. </b></p>  
+    <p><b>Activity trackers provide data which enables you to become aware of your physical activity levels. The following indices have been developed to provide a guideline on steps and activity levels: Sedentary is less than 5,000 steps per day, low active is 5,000 to 7,499 steps per day, somewhat active is 7,500 to 9,999 steps per day, active is more than 10,000 steps per day, highly active is more than 12,500. </b></p>
+
+
+
+
+  </div>
+
+
+
+   
+<div class="content-body">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+
+
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-text"><h4><b>Data Information</b></h4>
+                                    <div class="stat-text"> Number of days in dataset: {{passeddays_in_data_pers}}  </div>                   
+                                    <div class="stat-text"> Number of records in dataset: {{passedpr1_rowcount}}   </div>
+
+                            
+                        </div>
+                    </div>
+                     </div>
+                      </div>
+                    
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                   <div class="stat-content"><b><h4>Religion inferences</h4> </b></div>
+                                    {% if passedjew_rel == '1' %}
+                                    <div class="stat-text">It can be inferred that you are less active on Saturdays that the other days of the week. This can be an indication of your religion 
+                                        (not a proof).
+                                                                                
+                                     </div>
+                                     {%else%}
+                                     <div class="stat-text">No religion related inferences can be made based on your data.
+                                                                                
+                                     </div>
+                                     {% endif %}
+                                    
+                                </div>
+                                    
+                                </div>
+                                
+                                
+                            
+                        </div>
+                    
+                     </div>
+
+
+
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Activity inferences</h4> </b></div>
+                                    <div class="stat-text">It can be inferred that your daily activity level index is <b>{{passedactivity_level}}</b> based on your average daily number of steps: {{passedmean_steps}}
+                                                                                
+                                     </div> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                           
+
+
+
+                       
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-content"><b><h4>Possible pregnancy inferences</h4> </b></div>
+
+
+
+
+                                    {% if passedpregnancy_pos == '1' %}
+                                    <div class="stat-text">It can be inferred that you may be pregnant based on your resting heart rate.
+                                                                                
+                                     </div>
+                                     {%elif passedpregnancy_pos == '0'%}
+                                     <div class="stat-text">No pregnancy related inferences can be made based on your data.
+                                                                                
+                                     </div>
+                                     {%else%}
+                                     <div class="stat-text">This inference does not apply to you.
+                                                                                
+                                     </div>
+                                     {% endif %} 
+                                
+                            </div>
+                             
+
+
+
+                        </div>
+                    </div>
+                     </div>
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Daily steps graph</h4> </b></div>
+                                     <img src="{{url_for('static',filename='')}}{{passedfullnamemi}}" height="320" width="360" alt="" />
+                                                                          
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                     </div>
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Activity index graph</h4> </b></div>
+                                     <img src="{{url_for('static',filename='')}}{{passedfullnamemiactivityindex}}" height="320" width="360" alt="" />
+                                                                          
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                     </div>
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Pregnancy heart rate graph</h4> </b></div>
+                                     <img src="{{url_for('static',filename='')}}{{passedfullnameprpos}}" height="320" width="360" alt="" />
+                                                                          
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                     </div>
+ 
+
+
+
+
+
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Privacy risks </h4></b></div>
+                                    <div class="stat-text">When a person is unusually inactive on Saturdays, this could be an indication that this person could be an observant Jewish. 
+                                        <a href="https://dzone.com/articles/inferring-personal-information-from-fitness-data" target="_blank"><p style="color:red;font-size:12px;"><b>Source</b></a>                      
+                                     </div>
+                            
+                                 
+                            </div>
+                            <h4></h4>
+
+<div class="popup" onclick="funca()"><p style="color:MidnightBlue"><img src="{{url_for('static',filename='images/risk.png')}}" height="140" width="240" alt="Privacy complications" /></p>
+
+  <span class="popuptext" id="myPopuppa">Religious or philosophical beliefs are considered as sensitive personal data and could be used in a discriminatory way against you if obtained by a third party</span>
+</div>
+                        </div>
+                    </div>
+                    </div>
+
+             
+
+
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Privacy risks </h4></b></div>
+                                    <div class="stat-text">Information like daily walking step count could potentially reflect people’s stable lifestyle and habits or whether someone is at a lower or higher risk of all-cause mortality. From the amount of daily steps you take it can be infered whether you lead a healthy lifestyle or not.  <a href="https://jamanetwork.com/journals/jama/fullarticle/2763292" target="_blank"><p style="color:red;font-size:12px;"><b>Source</b></a>
+                                        
+                            
+                            </div>
+                                
+                            </div>
+                            <h4></h4>
+
+
+
+                            
+
+                            <div class="popup" onclick="funcb()"><p style="color:MidnightBlue"><img src="{{url_for('static',filename='images/risk.png')}}" height="140" width="240" alt="Privacy complications" /></p>
+  <span class="popuptext" id="myPopuppb">Your daily activity routines are an indication of your health status and could be used in a discriminatory way against you if obtained by a third party.</span>
+</div>
+                            
+
+
+                        </div>
+                    </div>
+                     </div>
+
+
+
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><div class="stat-content"><b><h4>Privacy risks </h4></b></div>
+                                   <div class="stat-text">Data such as pregnancy may reveal information about a person’s health and are classified as special category data in GDPR. This type of data needs to be treated with greater care because collecting and using it is more likely to interfere with people's fundamental rights or open someone up to discrimination. <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/special-category-data/what-is-special-category-data/" target="_blank"><p style="color:red;font-size:12px;"><b>Source</b></a>
+                                    </p>
+                                
+                            </div>
+                                
+                            </div>
+                            <h4></h4>
+
+                            
+
+                                <div class="popup" onclick="funcc()"><p style="color:MidnightBlue"><img src="{{url_for('static',filename='images/risk.png')}}" height="140" width="240" alt="Privacy complications" /></p>
+  <span class="popuptext" id="myPopuppc">Pregnancy inferences could be used in a discriminatory way against you if obtained by a third party.</span>
+</div>
+
+                            
+
+
+                        </div>
+                    </div>
+                     </div>
+
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content"><img src="{{url_for('static',filename='images/didyouknow.png')}}" height="120" width="160" alt="Privacy complications" />
+                                    <div class="stat-text"> <p style="font-size:12px;">Personal data revealing religious or philosophical beliefs can be seen as more sensitive or ‘private’, requiring specific protection. This is because use of this data could create significant risks to the individual’s fundamental rights and freedoms. For example, they are closely linked with the freedom of thought, conscience and religion; freedom of expression; freedom of assembly and association; the right to bodily integrity; the right to respect for private and family life; or freedom from discrimination. <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/special-category-data/what-is-special-category-data/" target="_blank"><b>Find out more about this here.</b> </a>
+                                        
+                                                                      
+
+
+                                <p style="font-size:12px;">Fitness tracker data can reveal details about personal health and lifestyles. Sharing tracked data with health insurance might mean that disadvantaged people will end up paying higher insurance premiums in the future. <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-91485-5_3.pdf" target="_blank"><b>Find out more about this here</b> </a>
+                                <br>
+
+                                                                 
+                                <p style="font-size:12px;">Parents-to-be are incredibly valuable customers, guaranteed to spend lots of money, so companies go to great lengths to identify them for targeted advertising.  <a href="hthttps://www.forbes.com/sites/kashmirhill/2014/04/29/you-can-hide-your-pregnancy-online-but-youll-feel-like-a-criminal/?sh=4f75d88621f3" target="_blank"><b>Find out more about this here.</b> </a>
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+                      </div>
+
+
+
+                    
+
+
+                   
+                </div>
+            </div>
+        </div>
+
+
+
+                
+          
+    <script>
+// When the user clicks on div, open the popup
+function funca() {
+  var popuppa = document.getElementById("myPopuppa");
+  popuppa.classList.toggle("show");
+}
+</script>
+
+    <script>
+// When the user clicks on div, open the popup
+function funcb() {
+  var popuppb = document.getElementById("myPopuppb");
+  popuppb.classList.toggle("show");
+}
+</script>
+  <script>
+// When the user clicks on div, open the popup
+function funcc() {
+  var popuppc = document.getElementById("myPopuppc");
+  popuppc.classList.toggle("show");
+}
+</script>
+
+
+
+
+
+      
+
+
+   <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">PrivacyEnhACT</a> 2021</p>
+            </div>
+        </div>
+    <!--**********************************
+            Footer end
+    ***********************************-->
+
+    <!-- jquery vendor -->
+    <script src="{{url_for('static',filename='js/lib/jquery.min.js')}}"></script>
+    
+    <script src="{{url_for('static',filename='js/lib/jquery.nanoscroller.min.js')}}"></script>
+    <!-- nano scroller -->
+    <script src="{{url_for('static',filename='js/lib/menubar/sidebar.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/preloader/pace.min.js')}}"></script>
+    <!-- sidebar -->
+
+    <script src="{{url_for('static',filename='js/lib/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+    <!-- bootstrap -->
+
+    <script src="{{url_for('static',filename='js/lib/calendar-2/moment.latest.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/calendar-2/pignose.init.js')}}"></script>
+
+
+    <script src="{{url_for('static',filename='js/lib/weather/jquery.simpleWeather.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/weather/weather-init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/circle-progress/circle-progress-init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/chartist/chartist.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/sparklinechart/jquery.sparkline.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/sparklinechart/sparkline.init.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
+    <!-- scripit init-->
+    <script src="{{url_for('static',filename='js/dashboard2.js')}}"></script>
+</body>
+
+</html>
